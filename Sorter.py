@@ -8,10 +8,16 @@ from time import sleep
 import colorama
 from colorama import Fore
 
+
 print( Fore.BLUE, 'Initialising Programme...')
 sleep(0.7)
 
+
 # Create needed variables
+acc_list_path = '/Users'
+accounts = os.listdir(acc_list_path)
+for account in accounts:
+    print(account)
 UserID = str(input('Enter userID related to Windows account -->  '))
 wr_dir = '/Users/' + UserID + '/Downloads'
 au_dir = '/Users/' + UserID + '/Music'
@@ -25,8 +31,10 @@ iso_dir = '/Users/' + UserID + '/Downloads/iso'
 tor_dir = '/Users/' + UserID + '/Downloads/torrents'
 full_dir = os.path.join
 
+    
 print('Creating required directories...')
 sleep(1.6)
+
 
 if os.path.isdir(zip_dir):
     pass    
@@ -53,7 +61,7 @@ else:
 # Create Read function
 print('Main function started.')
 sleep(.5)
-def main():
+def sorter():
     try:
         # Read Filenames
         print('Reading Files from Downloads directory.')
@@ -111,7 +119,7 @@ def main():
         pass
 # Call function
 if __name__ == '__main__':
-    main()
+    sorter()
 print(end='')
 sleep(2)
 print('Done...')
