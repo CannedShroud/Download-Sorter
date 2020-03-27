@@ -12,23 +12,17 @@ from colorama import Fore
 print( Fore.BLUE, 'Initialising Programme...')
 sleep(0.7)
 
-
-# Create needed variables
-acc_list_path = '/Users'
-accounts = os.listdir(acc_list_path)
-for account in accounts:
-    print(account)
-UserID = str(input('Enter userID related to Windows account -->  '))
-wr_dir = '/Users/' + UserID + '/Downloads'
-au_dir = '/Users/' + UserID + '/Music'
-pic_dir = '/Users/' + UserID + '/Pictures'
-vid_dir = '/Users/' + UserID + '/Videos'
-txt_dir = '/Users/' + UserID + '/Documents'
-zip_dir = '/Users/' + UserID + '/Downloads/zip'
-rar_dir = '/Users/' + UserID + '/Downloads/rar'
-exe_dir = '/Users/' + UserID + '/Downloads/Software'
-iso_dir = '/Users/' + UserID + '/Downloads/iso'
-tor_dir = '/Users/' + UserID + '/Downloads/torrents'
+UserID = str(os.environ['USERPROFILE'])
+wr_dir = UserID + '/Downloads'
+au_dir = UserID + '/Music'
+pic_dir = UserID + '/Pictures'
+vid_dir = UserID + '/Videos'
+txt_dir = UserID + '/Documents'
+zip_dir = UserID + '/Downloads/zip'
+rar_dir = UserID + '/Downloads/rar'
+exe_dir = UserID + '/Downloads/Software'
+iso_dir = UserID + '/Downloads/iso'
+tor_dir = UserID + '/Downloads/torrents'
 full_dir = os.path.join
 
     
